@@ -16,6 +16,17 @@ Ruby 2.3.7 で動作確認しています。
 ターミナル、コマンドプロンプトなどで以下を実行します。  
 `$ gem install rest-client`
 
+### Note
+
+このスクリプトでストーリーポイントを入力するためには  
+JIRA で Edit Issue した際に 'Story Points' フィールドが入力可能である必要があります。  
+  
+Story Points が表示されない場合は以下を設定してください。
+
+1. 左上のアイコンから 'JIRA Software' を選択。
+1. JIRA Settings => Screens => Default Issue Screen。編集。
+1. Field Tab で 'Story Points' フィールドを追加する。
+
 ## How to use this tool
 
 1. my_credential.rb を編集し、自身の JIRA アカウントを設定します。  

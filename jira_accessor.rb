@@ -15,6 +15,11 @@ class JiraAccessor
     return JSON.pretty_generate(param).to_s
   end
 
+  # NOTE:
+  # To edit StoryPoint via script, StoryPoint field needs to be shown in JIRA screen.
+  # Go to 'JIRA Software' from left top icon.
+  # 'JIRA Settings' => 'Screens' => 'Default Issue Screen' Edit => 'Field Tab'.
+  # Add 'Story Points' field there.
   def self.update_issue(key, story_point)
     begin
       response = RestClient::Request.new(:method     => :PUT,
