@@ -2,7 +2,7 @@
 # coding: utf-8
 
 require 'csv'
-require './jira_accessor'
+require './lib/jira/jira_accessor'
 
 # ------------------------------------------------------------
 

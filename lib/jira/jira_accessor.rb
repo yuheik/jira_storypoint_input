@@ -2,7 +2,7 @@
 
 require 'rest-client'
 require 'json'
-require './my_credential'
+require_relative './my_credential'
 
 class JiraAccessor
   API_URL = "#{Site}/rest/api/2"
