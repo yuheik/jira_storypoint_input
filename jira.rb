@@ -192,6 +192,15 @@ module Jira
 
       return subtasks
     end
+
+    # TODO on the way of function design
+    def self.compose_hash(story_point:)
+      param = Hash.new
+      param[:fields] = Hash.new
+      param[:fields][:customfield_10024] = story_point.to_f if story_point # TODO customfield depends on your Site.
+
+      return param
+    end
   end
 end
 
