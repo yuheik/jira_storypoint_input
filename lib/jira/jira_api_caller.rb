@@ -131,4 +131,22 @@ class JiraApiCaller < ApiCallerRestClient
 
     return issues
   end
+
+  # TODO:
+  # On the way of design.
+  #
+  # NOTE:
+  # To edit StoryPoint via script, StoryPoint field needs to be shown in JIRA screen.
+  # Go to 'JIRA Software' from left top icon.
+  # 'JIRA Settings' => 'Screens' => 'Default Issue Screen' Edit => 'Field Tab'.
+  # Add 'Story Points' field there.
+  def self.update_issue(key, param_hash)
+    payload = JSON.pretty_generate(param_hash).to_s
+
+    ApiCallerRestClient.call("#{JIRA_URL}/issue/#{key}",
+                             Credentials::UserName,
+                             Credentials::Password,
+                             :PUT,
+                             payload)
+  end
 end
