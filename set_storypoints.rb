@@ -2,7 +2,7 @@
 # coding: utf-8
 
 require 'csv'
-require './lib/jira/jira_accessor'
+require './lib/jira/jira_api_caller'
 
 # ------------------------------------------------------------
 
@@ -31,9 +31,10 @@ def set_storypoints_from_(csv_file)
   end
 end
 
-def set_storypoint(key, storypoint)
-  JiraAccessor.update_issue(key, storypoint)
-  puts "done [#{key} : #{storypoint}]"
+def set_storypoint(key, story_point)
+  param_hash = Jira::Issue.compose_hash(:story_point => story_point)
+  JiraApiCaller.update_issue(key, param_hash)
+  puts "done [#{key} : #{story_point}]"
 end
 
 
